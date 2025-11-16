@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  max-width: 1100px;
+  margin: auto;
+  align-items: center;
+}
+header nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+header button {
+  padding: 5px 20px;
+  border: none;
+  background-color: rgb(35, 75, 255);
+  border-radius: 5px;
+  color: white;
+}
+header .logo {
+  color: rgb(35, 75, 255);
+  font-weight: 700;
+  font-size: large;
+}
