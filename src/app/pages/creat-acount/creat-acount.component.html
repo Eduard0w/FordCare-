@@ -9,13 +9,16 @@
       </div>
 
       <form action="" method="post" class="flex flex-col gap-2">
+        <label for="usuario">Usuario</label>
+        <input type="text" name="" id="usuario" placeholder="Digite seu nome" class="border-gray-600 border px-2 py-1 rounded-lg">
+        <label for="Email">Email</label>
         <input type="email" name="" id="email" placeholder="E-mail" class="border-gray-600 border px-2 py-1 rounded-lg">
+        <label for="senha">Senha</label>
         <input type="password" name="" id="senha" placeholder="••••••••" class="border-gray-600 border px-2 py-1 rounded-lg">
-        <a href="" class="left-0 text-azul-texto">Esqueceu sua senha?</a>
-        <button type="submit" class="bg-azul-icon text-white p-2 rounded-xl">Entrar</button>
+        <input type="password" name="" id="senhaConfirm" placeholder="Confirme sua senha" class="border-gray-600 border px-2 py-1 rounded-lg">
+        <button type="submit" class="bg-azul-icon text-white p-2 rounded-xl">Criar</button>
       </form>
-      <!-- TODO: Organizar rota... -->
-      <p>Não tem uma conta? <a href="/creatAcount" class="text-azul-texto">Criar conta</a></p>
+      <p>Já tem uma conta? <a href="login" class="text-azul-texto">Entrar</a></p>
     </div>
   </div>
 </div>
