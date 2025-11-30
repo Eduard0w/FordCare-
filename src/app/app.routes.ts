@@ -4,12 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { CreatAcountComponent } from './pages/creat-acount/creat-acount.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CreatVehicleComponent } from './pages/creat-vehicle/creat-vehicle.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent }, // Rota coringa para URLs não encontradas
   { path: 'login', component: LoginComponent },
   { path: 'creatAcount', component: CreatAcountComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'vehicle', component: CreatVehicleComponent },
   { path: '**', component: HomeComponent },
 ];
 

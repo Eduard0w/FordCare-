@@ -12,4 +12,7 @@ export class Header {
   irParaLogin(): void {
     this.router.navigate(['/login']);
   }
+  irParaHome(): void{
+    this.router.navigate(['']);
+  }
 }
