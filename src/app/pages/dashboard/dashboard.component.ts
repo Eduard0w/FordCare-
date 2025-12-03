@@ -5,10 +5,11 @@ import { VeiculoCadastrado } from '../../models/veiculo-cadastrado';
 import { CarService } from '../../services/car.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Footer } from "../../component/footer/footer";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, Header, AppComponent, FormsModule],
+  imports: [CommonModule, Header, AppComponent, FormsModule, Footer],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
@@ -19,6 +20,7 @@ export class DashboardComponent implements OnInit {
   textoSaude = '';
   kmInput: number | null = null;
   recomendacoes: { tipo: string; titulo: string; detalhe?: string }[] = [];
+
 
   constructor(private carService: CarService) {}
 
@@ -58,9 +60,13 @@ export class DashboardComponent implements OnInit {
     if (!d) return '-';
     return new Date(d).toLocaleDateString();
   }
+
+  getDelay(i: number) {
+    return `${i * 50}ms`;
+  }
 }
 
-class proximasAcoes {
+export class proximasAcoes {
   recomendacoes = [
     {
       titulo: 'Troca de óleo',
@@ -68,24 +74,24 @@ class proximasAcoes {
       tipo: 'danger',
       icon: 'lucide-wrench',
     },
-    {
-      titulo: 'Rodízio de pneus recomendado',
-      detalhe: 'em 1.200 km',
-      tipo: 'warning',
-      icon: 'lucide-circle-dot',
-    },
+    // {
+    //   titulo: 'Rodízio de pneus recomendado',
+    //   detalhe: 'em 1.200 km',
+    //   tipo: 'warning',
+    //   icon: 'lucide-circle-dot',
+    // },
     {
       titulo: 'Revisão geral prevista',
       detalhe: 'para Março 2025',
       tipo: 'good',
       icon: 'lucide-settings',
     },
-    {
-      titulo: 'Verificar bateria',
-      detalhe: 'última troca há 2 anos',
-      tipo: 'warning',
-      icon: 'lucide-battery',
-    },
+    // {
+    //   titulo: 'Verificar bateria',
+    //   detalhe: 'última troca há 2 anos',
+    //   tipo: 'warning',
+    //   icon: 'lucide-battery',
+    // },
     {
       titulo: 'Luz de injeção registrada',
       detalhe: 'veja possíveis causas',
@@ -94,7 +100,5 @@ class proximasAcoes {
     },
   ];
 
-  getDelay(i: number) {
-    return `${i * 50}ms`;
-  }
+
 }

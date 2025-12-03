@@ -267,7 +267,7 @@
 
 <!-- <app-card-diagnostico></app-card-diagnostico> -->
 
-<div>
+<div class="mb-5">
   <app-header></app-header>
 
   <section class="max-w-[1100px] m-auto">
@@ -397,27 +397,28 @@
 
           <ng-container *ngFor="let r of acoes.recomendacoes; let i = index">
 
-            <div class="flex items-center gap-3 p-3 rounded-lg border-l-4 cursor-pointer transition-all duration-200 animate-slide-up" [ngClass]="{
-                'border-l-destructive bg-destructive/5 hover:bg-destructive/10': r.tipo === 'danger',
-                'border-l-health-warning bg-health-warning/5 hover:bg-health-warning/10': r.tipo === 'warning',
-                'border-l-health-good bg-health-good/5 hover:bg-health-good/10': r.tipo === 'good'
+            <div *ngIf="r.tipo == r.tipo" class="flex items-center gap-3 p-3 rounded-lg border-l-4 cursor-pointer transition-all duration-200 animate-slide-up" [ngClass]="{
+                'bg-red-100 border-l-red-600': r.tipo === 'danger',
+                'bg-yellow-100 border-l-yellow-600': r.tipo === 'warning',
+                'bg-green-100 border-l-green-600': r.tipo === 'good'
                }" [style.animation-delay]="getDelay(i)">
 
 <!-- https://chatgpt.com/share/69303643-c250-800f-9d9e-c169ddf08ef4 -->
 
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide h-5 w-5" [ngClass]="r.icon">
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide h-5 w-5" [ngClass]="r.icon">
                 <circle *ngIf="r.icon === 'lucide-circle-dot'" cx="12" cy="12" r="10"></circle>
                 <circle *ngIf="r.icon === 'lucide-circle-dot'" cx="12" cy="12" r="1"></circle>
-              </svg>
+              </svg> -->
 
               <div class="flex-1 min-w-0">
                 <p class="font-medium text-foreground truncate">{{ r.titulo }}</p>
                 <p class="text-sm text-muted-foreground">{{ r.detalhe }}</p>
               </div>
 
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right h-4 w-4 text-muted-foreground">
+              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right h-4 w-4 text-muted-foreground">
                 <path d="m9 18 6-6-6-6"></path>
-              </svg>
+              </svg> -->
+              <input type="checkbox" name="" id="">
 
             </div>
 
@@ -444,7 +445,7 @@
   <section class="max-w-[1100px] m-auto mt-5">
     <div class="rounded-xl border bg-card p-6 shadow-card">
       <h3 class="text-xl font-semibold flex items-center gap-2">Atualizar Quilometragem</h3>
-      <div class="p-6 pt-0 space-y-4">
+      <div class=" pt-0 space-y-4">
         <div class="flex gap-3">
           <input type="number" placeholder="Digite a quilometragem atual" [(ngModel)]="kmInput" class="flex w-full rounded-md border px-3 py-2 h-12 text-lg" />
           <button class="h-11 rounded-lg px-6 bg-azul-icon text-white" (click)="atualizarKm()">Atualizar</button>
@@ -456,3 +457,6 @@
 
   <app-card-diagnostico></app-card-diagnostico>
 </div>
+
+
+<app-footer></app-footer>
