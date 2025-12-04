@@ -12,7 +12,7 @@ import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-creat-acount',
-  imports: [ɵInternalFormsSharedModule, ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './creat-acount.component.html',
   styleUrl: './creat-acount.component.css',
 })
@@ -39,7 +39,7 @@ export class CreatAcountComponent {
       return;
     }
     console.log(this.creatAcountForm.value);
-    // this.storage.set('usuario', this.creatAcountForm.value);
+    this.storage.set('usuario', this.creatAcountForm.value);
     this.router.navigate(['/login']);
   }
 }

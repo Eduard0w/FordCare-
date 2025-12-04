@@ -8,9 +8,9 @@
         <p class="font-semibold mb-8 text-gray-500">Entre com sua conta para continuar.</p>
       </div>
 
-      <form action="" method="post" class="flex flex-col gap-2">
-        <input type="email" name="" id="email" placeholder="E-mail" class="border-gray-600 border px-2 py-1 rounded-lg">
-        <input type="password" name="" id="senha" placeholder="••••••••" class="border-gray-600 border px-2 py-1 rounded-lg">
+      <form [formGroup]="loginForm" (ngSubmit)="verificarConta()" action="" method="post" class="flex flex-col gap-2">
+        <input formControlName="email" type="email" id="email" placeholder="E-mail" class="border-gray-600 border px-2 py-1 rounded-lg" required>
+        <input formControlName="senha" type="password" id="senha" placeholder="••••••••" class="border-gray-600 border px-2 py-1 rounded-lg" required>
         <a href="" class="left-0 text-azul-texto">Esqueceu sua senha?</a>
         <button type="submit" class="bg-azul-icon text-white p-2 rounded-xl">Entrar</button>
       </form>
