@@ -5,6 +5,7 @@ const STORAGE_KEY = 'veiculo_cadastrado_v1';
 
 @Injectable({ providedIn: 'root' })
 export class CarService {
+  
   saveVeiculo(v: VeiculoCadastrado) {
     // serializa Date para ISO para persistir
     const serial = {
