@@ -14,7 +14,7 @@ import { CarService } from '../../services/car.service';
 })
 export class VeiculosComponent {
   VeiculoCadastrados: VeiculoCadastrado[] = [];
-  existemVeiculos: boolean = true;
+  existemVeiculos: boolean = false;
   telaRemoverVeiculo: boolean = false;
 
   constructor(private router: Router, private car: CarService) {
@@ -26,7 +26,11 @@ export class VeiculosComponent {
 
   telaCriar() {
     this.router.navigate(['/vehicle/create']);
-    this.existemVeiculos = true;
+    if (this.VeiculoCadastrados.length > 0) {
+      this.existemVeiculos = true;
+    } else {
+      this.existemVeiculos = false;
+    }
   }
 
   aparecerTelaRemover() {

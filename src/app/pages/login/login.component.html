@@ -3,7 +3,7 @@
     <div class="w-full max-w-md ">
 
       <div class="text-center">
-        <h1 class="text-5xl text-azul-texto font-extrabold mb-5">FordCare+</h1>
+        <h1 class="text-5xl text-azul-texto font-extrabold mb-5 cursor-pointer" (click)="irHome()">FordCare+</h1>
         <h3 class="text-3xl font-semibold mb-1">Bem-vindo de volta!</h3>
         <p class="font-semibold mb-8 text-gray-500">Entre com sua conta para continuar.</p>
       </div>
@@ -14,7 +14,7 @@
         <a href="" class="left-0 text-azul-texto">Esqueceu sua senha?</a>
         <button type="submit" class="bg-azul-icon text-white p-2 rounded-xl">Entrar</button>
       </form>
-      <!-- TODO: Organizar rota... Colocar a parada do LGPD aqui-->
+      <p *ngIf="loginInvalido" class="mt-2 text-red-600 mb-2">{{ mensagemErro }}</p>
       <p>Não tem uma conta? <a href="/creatAcount" class="text-azul-texto">Criar conta</a></p>
     </div>
   </div>

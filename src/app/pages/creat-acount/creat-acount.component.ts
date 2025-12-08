@@ -42,4 +42,8 @@ export class CreatAcountComponent {
     this.storage.set('usuario', this.creatAcountForm.value);
     this.router.navigate(['/login']);
   }
+
+  irHome() {
+    this.router.navigate(['']);
+  }
 }

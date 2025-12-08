@@ -24,9 +24,8 @@ export class CreatVehicleComponent {
   activeTabClass = 'px-4 py-2 -mb-px border-b-2 border-blue-600 text-blue-700 font-semibold';
   inactiveTabClass = 'px-4 py-2 text-gray-600 hover:text-blue-700';
   constructor(private fb: FormBuilder, private carService: CarService, private router: Router) {
-    // inicializar o formulário AQUI, após injetar fb
     this.vehicleForm = this.fb.group({
-      marca: ['', Validators.required],
+      marca: ['Ford', Validators.required],
       modelo: ['', Validators.required],
       ano: [null, Validators.required],
       placa: [''],
@@ -129,5 +128,36 @@ export class CreatVehicleComponent {
     this.carService.saveVeiculo(veiculo);
     console.log(veiculo);
     this.router.navigate(['/dashboard']);
+  }
+
+  limpar() {
+    this.vehicleForm.setValue({
+      marca: 'Ford',
+      modelo: '',
+      ano: null,
+      placa: '',
+      combustivel: '',
+      quilometragem: null,
+
+      ult_troca_oleo_data: '',
+      ult_troca_oleo_km: '',
+
+      ult_troca_filtro_data: '',
+      ult_troca_filtro_km: '',
+
+      ult_troca_pastilhas_data: '',
+      ult_troca_pastilhas_km: '',
+
+      // alertas
+      engineLight: false,
+      absLight: false,
+      batteryLight: false,
+      airbagLight: false,
+      oilLight: false,
+      tempLight: false,
+
+      tipo_uso: '',
+      KM_medio_p_dia: '',
+    });
   }
 }

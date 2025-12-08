@@ -234,17 +234,17 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-medium mb-1">Marca</label>
-            <input formControlName="marca" type="text" class="w-full p-2 border rounded" value="Ford" />
+            <input formControlName="marca" type="text" class="w-full p-2 border rounded" readonly />
           </div>
 
           <div>
             <label class="block text-sm font-medium mb-1">Modelo</label>
-            <input formControlName="modelo" type="text" class="w-full p-2 border rounded" placeholder="Ex: Ka" />
+            <input formControlName="modelo" type="text" class="w-full p-2 border rounded" placeholder="Ex: Ka" required />
           </div>
 
           <div>
             <label class="block text-sm font-medium mb-1">Ano</label>
-            <input formControlName="ano" type="number" class="w-full p-2 border rounded" placeholder="Ex: 2016" />
+            <input formControlName="ano" type="number" class="w-full p-2 border rounded" placeholder="Ex: 2016" required />
           </div>
 
           <div>
@@ -265,7 +265,7 @@
 
           <div>
             <label class="block text-sm font-medium mb-1">Quilometragem atual</label>
-            <input formControlName="quilometragem" type="number" class="w-full p-2 border rounded" placeholder="Ex: 72300" />
+            <input formControlName="quilometragem" type="number" class="w-full p-2 border rounded" placeholder="Ex: 72300" required />
           </div>
         </div>
       </div>
@@ -358,7 +358,7 @@
 
       <!-- Ações -->
       <div class="flex gap-3 justify-end">
-        <button type="button" class="px-4 py-2 border rounded">Limpar</button>
+        <button type="button" class="px-4 py-2 border rounded" (click)="limpar()">Limpar</button>
         <button type="submit" class="px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Salvar Veículo</button>
       </div>
     </form>

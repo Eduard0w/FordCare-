@@ -2,16 +2,19 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { LocalStorageService } from '../../services/local-storage.service';
 import { Router } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   loginForm: FormGroup;
   storageUsuario: any;
+  loginInvalido: boolean = false;
+  mensagemErro: string = '';
   constructor(
     private router: Router,
     private storage: LocalStorageService,
@@ -25,20 +28,29 @@ export class LoginComponent {
   }
 
   verificarConta() {
-    if (this.storageUsuario && this.loginForm.valid) {
-      if (
-        this.storageUsuario.email === this.loginForm.value.email &&
-        this.storageUsuario.senha === this.loginForm.value.senha
-      ) {
-        alert('Login bem-sucedido!');
-        console.log('Usuário logado:', this.storageUsuario, ' - ', this.storage.get('usuario'));
-        this.router.navigate(['/dashboard']);
-        this.storage.set('logado', true);
-      } else {
-        alert('Email ou senha incorretos.');
-        this.storage.set('logado', false);
-      }
+    this.mensagemErro = 'Email ou senha incorretos.';
+    if (!this.storageUsuario) {
+      this.loginInvalido = true;
+      this.mensagemErro = 'Nenhuma conta encontrada.';
+      return;
+    }
+
+    if (
+      this.storageUsuario.email === this.loginForm.value.email &&
+      this.storageUsuario.senha === this.loginForm.value.senha
+    ) {
+      this.loginInvalido = false;
+      console.log('Usuário logado:', this.storageUsuario, ' - ', this.storage.get('usuario'));
+      this.router.navigate(['/dashboard']);
+      this.storage.set('logado', true);
+    } else {
+      this.storage.set('logado', false);
+      this.loginInvalido = true;
     }
     console.log(this.loginForm.value);
+  }
+
+  irHome() {
+    this.router.navigate(['']);
   }
 }
