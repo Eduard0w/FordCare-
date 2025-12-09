@@ -14,7 +14,7 @@ html {
   font-family: 'Momo Trust Sans', sans-serif;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   appearance: auto !important;
   -webkit-appearance: auto !important;
 }
