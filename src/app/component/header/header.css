@@ -1,4 +1,4 @@
-header {
+/* header {
   display: flex;
   justify-content: space-between;
   padding: 20px 0px;
@@ -35,7 +35,6 @@ header .loginButton:hover {
 header .sairButton {
   padding: 5px 20px;
   border: 1px solid rgb(255, 58, 52);
-  /* background-color: rgb(235, 151, 148); */
   border-radius: 5px;
   color: black;
 }
@@ -47,15 +46,98 @@ header .logo {
   color: rgb(35, 75, 255);
   font-weight: 700;
   font-size: large;
-}
+} */
 
 /* Menu responsivo */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   header{
     padding-right: 10px;
     padding-left: 10px;
   }
   header .navNormal {
     display: none;
+  }
+} */
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Largura máxima e centralização */
+  max-width: 1100px;
+  margin: 0 auto;
+  /* Padding vertical e horizontal para não colar nas bordas do celular */
+  padding: 20px 20px;
+  width: 100%;
+  background-color: white; /* Garante fundo branco se sobrepor algo */
+}
+
+/* Links gerais */
+a {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s;
+  white-space: nowrap; /* Evita quebra de texto no botão */
+}
+
+a:hover {
+  color: white;
+  background-color: #234bff;
+}
+
+/* Botões */
+.loginButton {
+  padding: 8px 25px;
+  border: none;
+  background-color: rgb(35, 75, 255);
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.loginButton:hover {
+  background-color: rgb(23, 49, 178);
+}
+
+.sairButton {
+  padding: 6px 20px;
+  border: 1px solid rgb(255, 58, 52);
+  background-color: transparent;
+  border-radius: 5px;
+  color: rgb(255, 58, 52); /* Texto vermelho para combinar com a borda */
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.sairButton:hover {
+  background-color: rgb(255, 58, 52);
+  color: white;
+}
+
+.logo {
+  color: rgb(35, 75, 255);
+  font-weight: 700;
+  font-size: 1.5rem; /* Levemente maior */
+}
+
+.text-azul-texto {
+  color: rgb(35, 75, 255);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  /* O header já tem padding no CSS principal, não precisa repetir aqui */
+
+  /* Ajuste específico para o menu mobile flutuante */
+  .navMobile {
+    /* Garante que o menu fique acima de tudo */
+    z-index: 50;
+    /* Sombra mais forte para destacar */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 }

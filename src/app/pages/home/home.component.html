@@ -17,7 +17,6 @@
             <img src="BG_img2.jpg" class="d-block w-100" alt="Fundo 2">
           </div>
 
-          <!-- Encontrar uma imagen melhor para essa div aqui -->
           <div class="carousel-item" data-bs-interval="3000">
             <img src="BG_img3.jpg" class="d-block w-100" alt="Fundo 3">
           </div>
@@ -40,8 +39,8 @@
     </section>
 
     <section class="mt-5 flex flex-col items-center justify-center">
-      <h2 class="text-3xl max-sm:text-2xl text-azul-texto font-bold">FordCare+ está aqui para ajudar você!</h2>
-      <p class="text-center max-sm:text-xs">Ele foi desenvolvido para proprietários de Ford que desejam manter seu veículo em perfeitas <br>condições, mesmo sem os recursos de conectividade do FordPass.</p>
+      <h2 class="text-3xl text-center max-sm:text-2xl text-azul-texto font-bold">FordCare+ está aqui para ajudar você!</h2>
+      <p class="text-center max-sm:text-xs">Ele foi desenvolvido para proprietários de Ford que desejam manter seu veículo em perfeitas <br class="max-sm:hidden">condições, mesmo sem os recursos de conectividade do FordPass.</p>
 
       <div class="mt-5 grid max-sm:grid-cols-1 grid-cols-3 gap-10">
         <div class="infoView" data-aos="fade-up">
@@ -80,7 +79,57 @@
       </div>
     </section>
 
-    <section class="mt-5 flex flex-col justify-center ">
+
+    <section class="py-16 px-4 md:px-6 bg-white">
+      <h2 class="text-center text-2xl md:text-3xl text-blue-800 font-bold mb-12">Como funciona?</h2>
+
+      <div class="max-w-4xl mx-auto space-y-6">
+
+        <div class="flex items-center gap-6 p-6 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all bg-white" data-aos="fade-right">
+          <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+            <img src="user-check.svg" alt="Icone" class="w-8 h-8">
+          </div>
+          <div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800">Cadastre-se</h3>
+            <p class="text-gray-600">Crie sua conta em segundos</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 p-6 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all bg-white" data-aos="fade-left">
+          <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+            <img src="car.svg" alt="Icone" class="w-8 h-8">
+          </div>
+          <div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800">Registre seu veículo</h3>
+            <p class="text-gray-600">Informe os dados básicos do seu Ford</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 p-6 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all bg-white" data-aos="fade-right">
+          <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+            <img src="toolbox.svg" alt="Icone" class="w-8 h-8">
+          </div>
+          <div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800">Faça inspeções regulares</h3>
+            <p class="text-gray-600">Responda perguntas simples sobre seu veículo</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 p-6 rounded-lg border border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all bg-white" data-aos="fade-left">
+          <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+            <img src="exam.svg" alt="Icone" class="w-8 h-8">
+          </div>
+          <div>
+            <h3 class="text-lg md:text-xl font-bold text-gray-800">Receba Recomendações</h3>
+            <p class="text-gray-600">Obtenha alertas e sugestões personalizadas</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- <section class="mt-5 flex flex-col justify-center ">
       <h2 class="flex justify-center text-3xl text-azul-texto font-bold">Como funciona?</h2>
 
       <div class="mt-5 grid grid-rows-4 gap-5 max-w-1100px m-auto ">
@@ -127,12 +176,8 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- <section class="pt-5 pb-5 mt-10 flex flex-col justify-center items-center bg-azul-icon h-96">
-      <h2 class="flex justify-center text-3xl text-white font-bold max-sm:text-2xl">Começe agora a cuidar do seu veiculo!</h2>
-      <button class="mt-5 text-white bg-blue-950 px-4 py-3 rounded" (click)="telaLogin()">Cadastre-se!</button>
     </section> -->
+
     <section class="relative w-full py-16 px-6 mt-10">
       <!-- Fundo com gradiente -->
       <div class="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900"></div>
